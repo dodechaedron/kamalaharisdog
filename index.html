@@ -1,0 +1,1104 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en" class=""><head>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script async="" src="js/sp-2.0.0-dm-0.1.min.js"></script><script type="text/javascript">
+    window._currentDevice = 'desktop';
+    window.Parameters = window.Parameters || {
+        HomeUrl: 'https://www.newtondog.vip/',
+        AccountUUID: '42b00a7133a440f6947f490ca37b76ad',
+        SystemID: 'US_DIRECT_PRODUCTION',
+        SiteAlias: 'f28718a9',
+        SiteType: atob('RFVEQU9ORQ=='),
+        PublicationDate: 'Thu Jul 25 13:03:46 UTC 2024',
+        ExternalUid: 'd8e8e166-4a81-11ef-835a-3417ebe725e0',
+        IsSiteMultilingual: false,
+        InitialPostAlias: '',
+        InitialDynamicItem: '',
+        DynamicPageInfo: {
+            isDynamicPage: false,
+            base64JsonRowData: 'null',
+        },
+        InitialPageAlias: 'home',
+        InitialPageUuid: 'cd89e20d44794f219bd3343a1ec55191',
+        InitialPageId: '1156657175',
+        InitialEncodedPageAlias: 'aG9tZQ==',
+        CurrentPageUrl: '',
+        IsCurrentHomePage: true,
+        AllowAjax: false,
+        AfterAjaxCommand: null,
+        HomeLinkText: 'Back To Home',
+        UseGalleryModule: false,
+        CurrentThemeName: 'Layout Theme',
+        ThemeVersion: '46180',
+        DefaultPageAlias: '',
+        RemoveDID: true,
+        WidgetStyleID: null,
+        IsHeaderFixed: true,
+        IsHeaderSkinny: true,
+        IsBfs: true,
+        StorePageAlias: 'store',
+        StorePagesUrls: 'e30=',
+        IsNewStore: 'false',
+        StorePath: '/store',
+        StoreId: '106806284',
+        StoreVersion: 2,
+        StoreBaseUrl: '/store',
+        StoreCleanUrl: true,
+        StoreDisableScrolling: true,
+        IsStoreSuspended: false,
+        NotificationSubDomain: 'newtondog',
+        HasCustomDomain: true,
+        SimpleSite: false,
+        showCookieNotification: false,
+        cookiesNotificationMarkup: 'null',
+        translatedPageUrl: '',
+        isFastMigrationSite: false,
+        sidebarPosition: 'NA',
+        currentLanguage: 'en',
+        currentLocale: 'en',
+        NavItems: '{}',
+        errors: {
+            general: 'There was an error connecting to the page.<br/> Make sure you are not offline.',
+            password: 'Incorrect name/password combination',
+            tryAgain: 'Try again'
+        },
+        NavigationAreaParams: {
+            ShowBackToHomeOnInnerPages: true,
+            NavbarSize: 4,
+            NavbarLiveHomePage: 'https://www.newtondog.vip/',
+            BlockContainerSelector: '.dmBody',
+            NavbarSelector: '#dmNav:has(a)',
+            SubNavbarSelector: '#subnav_main'
+        },
+        hasCustomCode: false,
+        planID: '1623',
+        customTemplateId: 'null',
+        siteTemplateId: 'null',
+        productId: 'DM_DIRECT',
+        disableTracking: false,
+        pageType: 'FROM_SCRATCH',
+        isRuntimeServer: true,
+        isInEditor: false,
+        hasNativeStore: false
+    };
+
+    window.Parameters.LayoutID = {};
+    window.Parameters.LayoutID[window._currentDevice] = 6;
+    window.Parameters.LayoutVariationID = {};
+    window.Parameters.LayoutVariationID[window._currentDevice] = 5;
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Injecting site-wide to the head -->
+
+
+
+
+<!-- End Injecting site-wide to the head -->
+
+<!-- Inject secured cdn script -->
+
+
+<!-- ========= Meta Tags ========= -->
+<!-- PWA settings -->
+<script>
+    function toHash(str) {
+        var hash = 5381, i = str.length;
+        while (i) {
+            hash = hash * 33 ^ str.charCodeAt(--i)
+        }
+        return hash >>> 0
+    }
+</script>
+<script>
+    (function (global) {
+    //const cacheKey = global.cacheKey;
+    const isOffline = 'onLine' in navigator && navigator.onLine === false;
+    const hasServiceWorkerSupport = 'serviceWorker' in navigator;
+    if (isOffline) {
+        console.log('offline mode');
+    }
+    if (!hasServiceWorkerSupport) {
+        console.log('service worker is not supported');
+    }
+    if (hasServiceWorkerSupport && !isOffline) {
+        window.addEventListener('load', function () {
+            const serviceWorkerPath = '/runtime-service-worker.js?v=3';
+            navigator.serviceWorker
+                .register(serviceWorkerPath, { scope: './' })
+                .then(
+                    function (registration) {
+                        // Registration was successful
+                        console.log(
+                            'ServiceWorker registration successful with scope: ',
+                            registration.scope
+                        );
+                    },
+                    function (err) {
+                        // registration failed :(
+                        console.log('ServiceWorker registration failed: ', err);
+                    }
+                )
+                .catch(function (err) {
+                    console.log(err);
+                });
+        });
+
+        // helper function to refresh the page
+        var refreshPage = (function () {
+            var refreshing;
+            return function () {
+                if (refreshing) return;
+                // prevent multiple refreshes
+                var refreshkey = 'refreshed' + location.href;
+                var prevRefresh = localStorage.getItem(refreshkey);
+                if (prevRefresh) {
+                    localStorage.removeItem(refreshkey);
+                    if (Date.now() - prevRefresh < 30000) {
+                        return; // dont go into a refresh loop
+                    }
+                }
+                refreshing = true;
+                localStorage.setItem(refreshkey, Date.now());
+                console.log('refereshing page');
+                window.location.reload();
+            };
+        })();
+
+        function messageServiceWorker(data) {
+            return new Promise(function (resolve, reject) {
+                if (navigator.serviceWorker.controller) {
+                    var worker = navigator.serviceWorker.controller;
+                    var messageChannel = new MessageChannel();
+                    messageChannel.port1.onmessage = replyHandler;
+                    worker.postMessage(data, [messageChannel.port2]);
+                    function replyHandler(event) {
+                        resolve(event.data);
+                    }
+                } else {
+                    resolve();
+                }
+            });
+        }
+    }
+})(window);
+</script>
+<!-- Add manifest -->
+<!-- End PWA settings -->
+
+
+
+<meta charset="utf-8">
+
+<link rel="canonical" href="https://www.newtondog.vip/">
+
+<meta id="view" name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<!--Add favorites icons-->
+
+<link rel="apple-touch-icon" href="images/photo_2024-07-25_15-37-39.jpg">
+
+<link rel="icon" type="image/x-icon" href="site_favicon_16_1721912022028.ico">
+
+<!-- End favorite icons -->
+<link rel="preconnect" href="https://lirp.cdn-website.com/">
+
+
+<!-- Prefetch Ecwid Javascript to speed up loading -->
+<link rel="prefetch" href="https://app.multiscreenstore.com/script.js?106806284">
+
+
+<!-- render the required CSS and JS in the head section -->
+<script>
+    window.SystemID = 'US_DIRECT_PRODUCTION';
+
+    if (!window.dmAPI) {
+        window.dmAPI = {
+            registerExternalRuntimeComponent: function () {
+            },
+            getCurrentDeviceType: function () {
+                return window._currentDevice;
+            }
+        };
+    }
+
+    if (!window.requestIdleCallback) {
+        window.requestIdleCallback = function (fn) {
+            setTimeout(fn, 0);
+        }
+    }
+</script>
+
+<!-- loadCSS function header.jsp-->
+
+
+
+
+
+
+<script id="d-js-load-css">
+/**
+ * There are a few <link> tags with CSS resource in them that are preloaded in the page
+ * in each of those there is a "onload" handler which invokes the loadCSS callback
+ * defined here.
+ * We are monitoring 3 main CSS files - the runtime, the global and the page.
+ * When each load we check to see if we can append them all in a batch. If threre
+ * is no page css (which may happen on inner pages) then we do not wait for it
+ */
+(function () {
+  let cssLinks = {};
+  function loadCssLink(link) {
+    link.onload = null;
+    link.rel = "stylesheet";
+    link.type = "text/css";
+  }
+  
+    function checkCss() {
+      const pageCssLink = document.querySelector("[id*='CssLink']");
+      const widgetCssLink = document.querySelector("[id*='widgetCSS']");
+
+        if (cssLinks && cssLinks.runtime && cssLinks.global && (!pageCssLink || cssLinks.page) && (!widgetCssLink || cssLinks.widget)) {
+            const storedRuntimeCssLink = cssLinks.runtime;
+            const storedPageCssLink = cssLinks.page;
+            const storedGlobalCssLink = cssLinks.global;
+            const storedWidgetCssLink = cssLinks.widget;
+
+            storedGlobalCssLink.disabled = true;
+            loadCssLink(storedGlobalCssLink);
+
+            if (storedPageCssLink) {
+                storedPageCssLink.disabled = true;
+                loadCssLink(storedPageCssLink);
+            }
+
+            if(storedWidgetCssLink) {
+                storedWidgetCssLink.disabled = true;
+                loadCssLink(storedWidgetCssLink);
+            }
+
+            storedRuntimeCssLink.disabled = true;
+            loadCssLink(storedRuntimeCssLink);
+
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    storedRuntimeCssLink.disabled = false;
+                    storedGlobalCssLink.disabled = false;
+                    if (storedPageCssLink) {
+                      storedPageCssLink.disabled = false;
+                    }
+                    if (storedWidgetCssLink) {
+                      storedWidgetCssLink.disabled = false;
+                    }
+                    // (SUP-4179) Clear the accumulated cssLinks only when we're
+                    // sure that the document has finished loading and the document 
+                    // has been parsed.
+                    if(document.readyState === 'interactive') {
+                      cssLinks = null;
+                    }
+                }, 0);
+            });
+        }
+    }
+  
+
+  function loadCSS(link) {
+    try {
+      var urlParams = new URLSearchParams(window.location.search);
+      var noCSS = !!urlParams.get("nocss");
+      var cssTimeout = urlParams.get("cssTimeout") || 0;
+
+      if (noCSS) {
+        return;
+      }
+      if (link.href && link.href.includes("d-css-runtime")) {
+        cssLinks.runtime = link;
+        checkCss();
+      } else if (link.id === "siteGlobalCss") {
+        cssLinks.global = link;
+        checkCss();
+      } 
+      
+      else if (link.id && link.id.includes("CssLink")) {
+        cssLinks.page = link;
+        checkCss();
+      } else if (link.id && link.id.includes("widgetCSS")) {
+        cssLinks.widget = link;
+        checkCss();
+      }
+      
+      else {
+        requestIdleCallback(function () {
+          window.setTimeout(function () {
+            loadCssLink(link);
+          }, parseInt(cssTimeout, 10));
+        });
+      }
+    } catch (e) {
+      throw e
+    }
+  }
+  window.loadCSS = window.loadCSS || loadCSS;
+})();
+</script>
+
+
+
+<script data-role="deferred-init" type="text/javascript">
+    /* usage: window.getDeferred(<deferred name>).resolve() or window.getDeferred(<deferred name>).promise.then(...)*/
+    function Def() {
+        this.promise = new Promise((function (a, b) {
+            this.resolve = a, this.reject = b
+        }).bind(this))
+    }
+
+    const defs = {};
+    window.getDeferred = function (a) {
+        return null == defs[a] && (defs[a] = new Def), defs[a]
+    }
+    window.waitForDeferred = function (b, a, c) {
+        let d = window?.getDeferred?.(b);
+        d
+            ? d.promise.then(a)
+            : c && ["complete", "interactive"].includes(document.readyState)
+                ? setTimeout(a, 1)
+                : c
+                    ? document.addEventListener("DOMContentLoaded", a)
+                    : console.error(`Deferred  does not exist`);
+    };
+</script>
+<style id="forceCssIncludes">
+    /* This file is auto-generated from a `scss` file with the same name */
+
+.videobgwrapper{overflow:hidden;position:absolute;z-index:0;width:100%;height:100%;top:0;left:0;pointer-events:none;border-radius:inherit}.videobgframe{position:absolute;width:101%;height:100%;top:50%;left:50%;transform:translateY(-50%) translateX(-50%);object-fit:fill}#dm video.videobgframe{margin:0}@media (max-width:767px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:80vh}}@media (min-width:1025px){.dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}@media (min-width:768px) and (max-width:1024px){.responsiveTablet .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done){min-height:45vh}}#dm [data-show-on-page-only]{display:none!important}#dmRoot div.stickyHeaderFix div.site_content{margin-top:0!important}#dmRoot div.stickyHeaderFix div.hamburger-header-container{position:relative}
+    
+
+</style>
+<style id="cssVariables" type="text/css">
+    
+</style>
+
+
+<style id="hideAnimFix">
+    .dmDesktopBody:not(.editGrid) [data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) [data-anim-extended] {
+        visibility: hidden;
+    }
+
+    .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-desktop]:not([data-anim-desktop='none']), .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-extended] {
+        visibility: hidden !important;
+    }
+</style>
+
+
+
+<style id="criticalCss">
+    @charset "UTF-8";.display_None,.dmPopupMask{display:none}*,.dmPopup,:after,:before{box-sizing:border-box}@font-face{font-family:Arvo;font-style:normal;font-weight:400;font-display:swap;src:url(fonts/tDbD2oWUg0MKqScQ7Q.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Arvo;font-style:normal;font-weight:700;font-display:swap;src:url(fonts/tDbM2oWUg0MKoZw1-LPK8w.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}.dmInner{min-height:100vh!important;position:relative}.dmPopup,.dmPopupMask{position:fixed;left:0}.dmDisplay_None{display:none!important}#dm .dmWidget .icon{font-size:26px}body.dmRoot #dm .dmOuter .dmInner .dmWidget .icon.hasFontIcon{height:26px;margin-top:-13px;line-height:normal;text-align:center;background-image:none}#dm .dmInner div.u_hcontainer,.dmRoot .hasFontIcon{background-image:none!important}.dmPopupMask{margin:0;width:10px;z-index:1000000999;top:0}#dmRoot .dmPopup,.dmPopup,.dmPopupClose:before,[data-display-type=block]{display:block}.dmPopup{text-align:left;top:10px;width:93%;z-index:1000009999!important;background:#f5f5f5;overflow-y:auto;height:100%}.dmPopup .dmPopupTitle{text-align:left;font:700 19px Helvetica,Arial;margin:20px 20px 35px;color:#999}#dm .dmInner .dmWidget,.dmHeader,.text-align-center{text-align:center}#dmPopup{opacity:0}.dmPopupClose,.dmPopupClose:before{position:absolute;visibility:visible}.dmPopupClose{border-radius:25px;width:27px;height:27px;z-index:1;background-color:rgba(255,255,255,.4);top:12px;right:12px}.dmPopupClose:before{font-size:20px;color:#000;top:3px;right:3px}body.dmDesktopBody:not(.mac) .data::-webkit-scrollbar{width:5px;height:5px}body.dmDesktopBody:not(.mac) .data::-webkit-scrollbar-track{background:rgba(0,0,0,.1)}body.dmDesktopBody:not(.mac) .data::-webkit-scrollbar-thumb{background:#c8c8c8;box-shadow:inset 0 1px 2px #454545;border-radius:45px}#dm .dmRespRow .dmRespColsWrapper{display:flex}.pswp{display:none;z-index:9999999999!important}.align-center{margin-left:auto;margin-right:auto}body.fix-mobile-scrolling{overflow:initial}#dmRoot{text-decoration-skip-ink:none}body{-webkit-overflow-scrolling:touch}@media (min-width:1025px){:root{--btn-text-font-size:24px}}@media (min-width:768px) and (max-width:1024px){:root{--btn-text-font-size:24px}}html{font-family:Source Sans Pro;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0}img{border:0;max-width:100%;-ms-interpolation-mode:bicubic;display:inline-block}button{font-family:inherit;font-size:100%;margin:0;line-height:normal;text-transform:none;-webkit-appearance:button}button::-moz-focus-inner{border:0;padding:0}.dmRespRow.dmRespRowNoPadding{padding:0}.dmRespRow{padding-top:15px;padding-bottom:15px}.dmRespRow:after,.dmRespRow:before{content:' ';display:table}.dmRespRow:after{clear:both}.dmRespRow,.dmRespRow .dmRespColsWrapper{max-width:960px;position:relative;margin:0 auto;width:100%}.dmHeader,.dmRespRow .dmRespCol>*{max-width:100%}.dmRespRow .dmRespCol{position:relative;width:100%;display:inline-block;vertical-align:top;float:left}.dmDesktopBody .dmRespRow .large-6{position:relative;width:50%}.dmDesktopBody .dmRespRow .large-12{position:relative;width:100%}[class*=' dm-common-icons-']{speak:none;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-family:dm-common-icons!important}.dm-common-icons-close:before{content:'\e901'}#dm div.dmContent [class*=' icon-'],[class*=' icon-']{font-family:FontAwesome!important;font-weight:400;font-style:normal;text-decoration:inherit;-webkit-font-smoothing:antialiased}[class*=' icon-']:before{text-decoration:none;display:inline-block;speak:none}a [class*=' icon-']{display:inline}[class*=' icon-']{display:inline;width:auto;height:auto;line-height:normal;vertical-align:baseline;background-image:none;background-position:0 0;background-repeat:repeat;margin-top:0}.icon-star:before{content:'\f005'}#dm .dmRespRow .dmRespCol>.dmWidget{overflow:initial}@media (min-width:768px){#dm .dmRespRow .dmRespCol>.dmWidget{width:280px;max-width:100%}}@media (max-width:767px){#dm .dmInner .dmWidget{width:100%}}#dm .dmInner .dmWidget:not(.displayNone){display:inline-block}#dm .dmInner .dmWidget:not(.flexButton):not(.displayNone)[data-display-type=block]{display:block}#dm .dmInner .dmWidget{text-decoration:none;margin:10px 0;clear:both;position:relative;line-height:22px;box-shadow:none;background-image:none;padding:0;height:auto;border-style:solid;white-space:nowrap}#dm .dmInner .dmWidget:after{content:'';display:inline-block;height:100%;vertical-align:middle;width:0;margin-right:-.25em}#dm .dmInner .dmWidget .iconBg{position:absolute;left:0;width:50px;top:50%;margin-top:-13px}#innerBar,#iscrollBody,#site_content,.dmHeader,.imageWidget{position:relative}#dm .dmWidget .text{display:inline-block;vertical-align:middle;font-size:1.125em;line-height:normal;white-space:normal;padding:10px 7px;max-width:98%}.dmInner{min-width:768px!important;font-size:16px;background:#fff;color:#666}body:not(.responsiveTablet) #dm .dmInner .dmBody .hide-for-large,body:not(.responsiveTablet) .hide-for-large{display:none!important}.dmNewParagraph[data-version]{line-height:initial}.dmNewParagraph[data-version] .text-align-left{text-align:left!important}.dmNewParagraph[data-version] .text-align-center{text-align:center!important}.dmNewParagraph[data-version] h1{margin-top:0;margin-bottom:0}@media (max-width:767px){.dmRoot .dmNewParagraph[data-version] .m-text-align-center{text-align:center!important}}.imageWidget img[width][height],img[width][height]{height:auto}*{border:0 solid #333;scrollbar-arrow-color:#fff;scrollbar-track-color:#F2F2F2;scrollbar-face-color:silver;scrollbar-highlight-color:silver;scrollbar-3dlight-color:silver;scrollbar-shadow-color:silver;scrollbar-darkshadow-color:silver;scrollbar-width:12px}body{width:100%;overflow:hidden;-webkit-text-size-adjust:100%!important;-ms-text-size-adjust:100%!important}h1{margin-left:0;margin-right:0}.dmInner *{-webkit-font-smoothing:antialiased}a,img{vertical-align:top}.dmOuter{word-wrap:break-word}.dmDesktopBody .dmInner{min-width:960px}.dmInner a{color:#463939}.dmHeader{background:#3ba0a1;color:#f7f7f7;width:100%}DIV.dmBody{padding:0;clear:both}.dmContent{margin:0;padding:0}#innerBar{height:36px;width:100%;font-size:20px;margin:0;z-index:80}#dm .dmRespRow.dmRespRowNoPadding{padding:0}.dmLargeBody .dmBody .dmRespRowsWrapper{background-color:#fff}.dmRespRowsWrapper{max-width:960px;margin:0 auto}.dmLargeBody .imageWidget:not(.displayNone){display:inline-block;max-width:100%}.imageWidget:not(.displayNone) img{width:100%}#dm .dmRespColsWrapper{display:block}.dmNewParagraph{text-align:left;margin:8px 0;padding:2px 0}.dmLargeBody .dmRespRowsWrapper>.dmRespRow .dmRespCol,.dmLargeBody .fHeader .dmRespRow .dmRespCol{padding-left:.75%;padding-right:.75%}.dmLargeBody .dmRespRowsWrapper>.dmRespRow .dmRespCol:first-child,.dmLargeBody .fHeader .dmRespRow .dmRespCol:first-child{padding-left:0;padding-right:1.5%}.dmLargeBody .dmRespRowsWrapper>.dmRespRow .dmRespCol:last-child,.dmLargeBody .fHeader .dmRespRow .dmRespCol:last-child{padding-right:0;padding-left:1.5%}.dmLargeBody .dmRespRowsWrapper>.dmRespRow .dmRespCol:only-child,.dmLargeBody .fHeader .dmRespRow .dmRespCol:only-child{padding-left:0;padding-right:0}#innerBar.lineInnerBar{display:table;width:100%;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;font-size:20px;margin-top:30px;margin-bottom:30px;background-color:transparent;color:#666}#innerBar .titleLine{display:table-cell;vertical-align:middle;width:50%}.dmPageTitleRow:not(#innerBar){display:none}.titleLine hr{min-height:1px;background-color:rgba(102,102,102,.2)}.dmStandardDesktop{display:block;margin:0 auto}.standardHeaderLayout .dmHeader{float:none;display:block;height:auto}.dmInner a{outline:0;vertical-align:inherit}body{background-color:#eee}#dm .dmBody .dmRespRowsWrapper{max-width:none;background-color:transparent}.dmLargeBody .dmRespRow{width:100%;max-width:none;margin-left:0;margin-right:0;padding-left:40px;padding-right:40px}.dm-bfs.dm-layout-home div.dmInner{background-color:#fff}.dmStandardDesktop .dmHeader{background-color:#3ba0a1;max-width:100%}#dm div.dmRespCol>*{line-height:2}#dm DIV.dmInner{background-repeat:no-repeat;background-image:none;background-size:cover;background-position:50% 0;background-attachment:fixed}#dm div.dmInner h1{font-family:Arvo,"Arvo Fallback"}#dm div.dmInner{font-family:Arvo,"Arvo Fallback";font-size:16px}#dm div.dmContent A,#dm div.dmContent A *{text-decoration:none}#dm div.dmContent h1{color:#fff;font-family:Arvo,"Arvo Fallback";font-size:50px}@media all{:root{--btn-text-direction:ltr;--btn-border-r-color:var(--btn-border-color);--btn-border-l-color:var(--btn-border-color);--btn-border-b-width:var(--btn-border-width);--btn-border-width:0px;--btn-border-radius:49px;--btn-border-t-width:var(--btn-border-width);--btn-border-tl-radius:var(--btn-border-radius);--btn-border-br-radius:var(--btn-border-radius);--btn-border-bl-radius:var(--btn-border-radius);--btn-bg-color:rgb(248, 87, 157);--btn-border-color:rgba(0, 0, 0, 0);--btn-border-tr-radius:var(--btn-border-radius);--btn-border-r-width:var(--btn-border-width);--btn-bg-image:none;--btn-border-b-color:var(--btn-border-color);--btn-border-l-width:var(--btn-border-width);--btn-border-t-color:var(--btn-border-color);--btn-text-align:center;--btn-text-color:rgb(255, 255, 255);--btn-text-decoration:none;--btn-text-font-weight:700;--btn-text-font-family:Arvo,"Arvo Fallback";--btn-icon-color:rgb(247, 247, 247);--btn-icon-fill:rgb(247, 247, 247);--btn-icon-wrpr-display:none;--btn-hover-border-b-color:var(--btn-hover-border-color);--btn-hover-bg:var(--btn-bg-color);--btn-hover-border-t-color:var(--btn-hover-border-color);--btn-hover-border-r-color:var(--btn-hover-border-color);--btn-hover-border-l-color:var(--btn-hover-border-color);--btn-hover-border-color:var(--btn-border-color);--btn-hover-text-color:var(--btn-text-color);--btn-hover-text-font-weight:var(--btn-text-font-weight);--btn-hover-text-decoration:var(--btn-text-decoration);--btn-hover-text-font-style:var(--btn-text-font-style)}}@media (min-width:0px) and (max-width:767px){:root{--btn-text-font-size:24px}}#dm .dmWidget:not([data-buttonstyle]){background-clip:border-box;border-radius:6px}#dm .dmWidget:not([data-buttonstyle]) .text{padding:10px 7px}#dm .dmWidget:not([data-buttonstyle]) .iconBg{display:none}#dm div.dmInner #site_content .dmWidget{background-color:var(--btn-bg-color);background-image:var(--btn-bg-image);border-color:var(--btn-border-color);border-bottom-color:var(--btn-border-b-color);border-left-color:var(--btn-border-l-color);border-right-color:var(--btn-border-r-color);border-top-color:var(--btn-border-t-color);border-radius:var(--btn-border-radius);border-bottom-left-radius:var(--btn-border-bl-radius);border-bottom-right-radius:var(--btn-border-br-radius);border-top-left-radius:var(--btn-border-tl-radius);border-top-right-radius:var(--btn-border-tr-radius);border-width:var(--btn-border-width);border-bottom-width:var(--btn-border-b-width);border-left-width:var(--btn-border-l-width);border-right-width:var(--btn-border-r-width);border-top-width:var(--btn-border-t-width);direction:var(--btn-text-direction);text-align:var(--btn-text-align)}#dm div.dmInner #site_content .dmWidget span.text{color:var(--btn-text-color);font-family:var(--btn-text-font-family);font-size:var(--btn-text-font-size);font-weight:var(--btn-text-font-weight);text-decoration:var(--btn-text-decoration)}#dm div.dmInner #site_content .dmWidget span.icon{color:var(--btn-icon-color);fill:var(--btn-icon-fill)}#dm div.dmInner #site_content .dmWidget:not([data-buttonstyle]) .iconBg{display:var(--btn-icon-wrpr-display)}#dm .p_hfcontainer div.u_1967859474{background-color:rgba(0,0,0,0)!important;float:none!important;top:auto!important;max-width:none!important;left:0!important;width:100%!important;position:relative!important;min-width:0!important;text-align:center!important;height:auto!important;padding:32px 0 40px!important;margin:0 auto!important}#dm .p_hfcontainer .u_1786527324{width:100%!important}#dm .p_hfcontainer div.u_1786527324 img,#dm .p_hfcontainer div.u_1786527324 img[dm_changed]{border-radius:300px!important;border-style:solid!important;border-width:4px!important}#dm .dmInner div.u_hcontainer{margin-bottom:0!important;margin-top:0!important;background-color:#39afb0!important}#dm .dmBody div.u_1949107781,#dm .dmBody div.u_1993363500{background-image:url(images/Hero-1900x1030-1920w.jpg),url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAABhGlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TpUUqHSwo4pChOlkQFemoVShChVArtOpgcukXNGlIUlwcBdeCgx+LVQcXZ10dXAVB8APEzc1J0UVK/F9aaBHjwXE/3t173L0DhEaFaVbPBKDptplOJsRsblUMvEJAGEEMIi4zy5iTpBQ8x9c9fHy9i/Es73N/jn41bzHAJxLPMsO0iTeIZzZtg/M+cYSVZJX4nHjcpAsSP3JdafEb56LLAs+MmJn0PHGEWCx2sdLFrGRqxNPEUVXTKV/ItljlvMVZq9RY+578haG8vrLMdZojSGIRS5AgQkENZVRgI0arToqFNO0nPPzDrl8il0KuMhg5FlCFBtn1g//B726twtRkKymUAHpfHOdjFAjsAs2643wfO07zBPA/A1d6x19tAPFP0usdLXoEhLeBi+uOpuwBlzvA0JMhm7Ir+WkKhQLwfkbflAMGboG+tVZv7X2cPgAZ6ip1AxwcAmNFyl73eHewu7d/z7T7+wFwJnKmZ9+MiwAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAAuIwAALiMBeKU/dgAAAAd0SU1FB+UCDwksLkLIPkkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAAC0lEQVQI12NgAAIAAAUAAeImBZsAAAAASUVORK5CYII=)!important;background-position:center left!important}#dm .dmBody div.u_1993363500,#dm .p_hfcontainer div.u_1786527324{position:relative!important;float:none!important;left:0!important;margin:0 auto!important;height:auto!important}#dm .p_hfcontainer div.u_1786527324{display:block!important;top:0!important;max-width:150px!important;width:calc(100% - 0px)!important;min-width:25px!important;text-align:center!important;min-height:auto!important;padding:0!important}#dm .dmBody .u_1172227398,#dm .dmBody .u_1295922874,#dm .dmBody div.u_1993363500{width:100%!important}#dm .dmBody div.u_1496663767{line-height:1.5!important;background-color:rgba(247,247,247,.1)!important}#dm .dmBody a.u_1748652879 span.text{font-weight:700!important;color:#fff!important;font-size:24px!important}#dm .dmBody div.u_1949107781{background-repeat:no-repeat!important;background-size:cover!important}#dm .dmBody div.u_1993363500{background-repeat:repeat!important;background-size:auto!important;background-attachment:fixed!important;top:auto!important;max-width:none!important;min-width:0!important;text-align:center!important;padding:194.5px 0!important}#dm .dmBody a.u_1419360703,#dm .dmBody div.u_1172181279{float:none!important;left:0!important;position:relative!important;min-width:25px!important}#dm .dmBody div.u_1172181279{line-height:normal!important;background-color:rgba(255,255,255,.1)!important}#dm .dmBody a.u_1748652879{color:#f8579d!important;background-color:#f8579d!important}#dm .dmBody div.u_1295922874 img{border-radius:300px!important;border-style:solid!important;border-width:9px!important;border-color:rgba(248,87,157,1)!important}#dm .dmBody a.u_1419360703 span.text{font-weight:700!important;color:#fff!important;font-size:24px!important}#dm .dmBody a.u_1419360703{color:#f8579d!important;background-color:#f8579d!important}#dm .dmBody a.u_1557851313 span.text{font-weight:700!important;color:#fff!important;font-size:24px!important}#dm .dmBody a.u_1557851313{color:#f8579d!important;background-color:#f8579d!important}#dm .dmBody a.u_1466005169 span.text{font-weight:700!important;color:#fff!important;font-size:24px!important}#dm .dmBody a.u_1466005169{color:#f8579d!important;background-color:#f8579d!important}#dm .dmBody div.u_1172181279{top:0!important;max-width:422.61px!important;width:calc(100% - 43px)!important;height:auto!important;min-height:auto!important;padding:2px 0!important;margin:0 0 8px 43px!important}#dm .dmBody a.u_1419360703{top:auto!important;max-width:calc(100% - 43px)!important;width:236px!important;text-align:center!important;height:60px!important;max-height:1000px!important;padding:0!important}#dm .dmBody a.u_1466005169,#dm .dmBody a.u_1557851313,#dm .dmBody a.u_1748652879{float:none!important;top:0!important;max-width:100%!important;left:0!important;width:236px!important;position:relative!important;min-width:0!important;text-align:center!important;height:60px!important;max-height:1000px!important;display:block!important;min-height:auto!important;padding:0!important}#dm .dmBody a.u_1748652879{margin:10px auto 10px 0!important}.dmDesktopBody:not(.editGrid) [data-anim-desktop]:not([data-anim-desktop=none]){visibility:hidden}.dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-desktop]:not([data-anim-desktop=none]){visibility:hidden!important}
+    .dmDesktopBody [data-anim-desktop]:not([data-anim-desktop='none']) {
+        visibility: hidden;
+    }
+
+    
+</style>
+
+
+
+<style id="fontFallbacks">
+    @font-face {
+  font-family: "Arvo Fallback";
+  src: local('Arial');
+  ascent-override: 87.6577%;
+  descent-override: 22.538%;
+  line-gap-override: 2.4498%;
+  size-adjust: 109.6239%;
+}
+</style>
+
+
+<!-- End render the required css and JS in the head section -->
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
+
+  <title>
+    NEWTON DOG
+  </title>
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="NEWTON DOG">
+  <meta name="twitter:image" content="https://lirp.cdn-website.com/f28718a9/dms3rep/multi/opt/photo_2024-07-25_15-37-39-1920w.jpg">
+  <meta property="og:title" content="NEWTON DOG">
+  <meta property="og:image" content="images/photo_2024-07-25_15-37-39-1920w.jpg">
+
+
+
+
+<!-- SYS- VVNfRElSRUNUX1BST0RVQ1RJT04= -->
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body id="dmRoot" data-page-alias="home" class="dmRoot dmDesktopBody fix-mobile-scrolling addCanvasBorder dmResellerSite dmLargeBody " style="padding:0;margin:0;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========= Site Content ========= -->
+<div id="dm" class="dmwr">
+    
+    <div class="dm_wrapper standard-var5 widgetStyle-3 standard">
+         <div dmwrapped="true" id="1133442075" class="dm-home-page" themewaschanged="true"> <div dmtemplateid="StandardLayoutMultiD" class="standardHeaderLayout dm-bfs dm-layout-home hasAnimations dmPageBody d-page-1484030132 dmFreeHeader" id="dm-outer-wrapper" data-page-class="1484030132" data-soch="true" data-background-parallax-selector=".dmHomeSection1, .dmSectionParallex"> <div id="dmStyle_outerContainer" class="dmOuter"> <div id="dmStyle_innerContainer" class="dmInner"> <div class="dmLayoutWrapper standard-var dmStandardDesktop"> <div> <div id="iscrollBody"> <div id="site_content"> <div class="dmHeaderContainer fHeader d-header-wrapper"> <div id="hcontainer" class="u_hcontainer dmHeader p_hfcontainer" freeheader="true"> <div dm:templateorder="85" class="dmHeaderResp dmHeaderStack noSwitch" id="1612104998"> <div class="u_1967859474 dmRespRow" style="text-align: center;" id="1967859474"> <div class="dmRespColsWrapper" id="1874213071"> <div class="dmRespCol small-12 medium-12 large-12" id="1132033058"> <div class="u_1786527324 imageWidget" data-widget-type="image" id="1786527324" data-element-type="image"><img src="images/photo_2024-07-25_15-37-39-180w.jpg" id="1894777455" dm_changed="true" class="u_1894777455" data-dm-image-path="https://irp.cdn-website.com/f28718a9/dms3rep/multi/photo_2024-07-25_15-37-39.jpg" width="640" height="640" onerror="handleImageLoadError(this)"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow dmRespRowStable dmRespRowNoPadding dmPageTitleRow "> <div class="dmRespColsWrapper"> <div class="large-12 dmRespCol"> <div id="innerBar" class="innerBar lineInnerBar dmDisplay_None"> <div class="titleLine display_None"><hr></div> 
+<!-- Page title is hidden in css for new responsive sites. It is left here only so we don't break old sites. Don't copy it to new layouts --> <div id="pageTitleText"></div> 
+ <div class="titleLine display_None"><hr></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div dmwrapped="true" id="dmFirstContainer" class="dmBody u_dmStyle_template_home dm-home-page" themewaschanged="true"> <div id="allWrapper" class="allWrapper"><!-- navigation placeholders --> <div id="dm_content" class="dmContent"> <div dm:templateorder="170" class="dmHomeRespTmpl mainBorder dmRespRowsWrapper dmFullRowRespTmpl" id="1484030132"> <div class="u_1949107781 dmRespRow hide-for-large hide-for-medium" style="text-align: center;" id="1949107781"> <div class="dmRespColsWrapper" id="1255340602"> <div class="dmRespCol small-12 medium-12 large-12" id="1283376961"> <div class="imageWidget align-center u_1172227398" data-element-type="image" data-widget-type="image" id="1172227398"><img src="images/photo_2024-07-25_15-37-39-1920w.jpg" alt="" id="1303918839" class="" data-dm-image-path="https://irp.cdn-website.com/f28718a9/dms3rep/multi/photo_2024-07-25_15-37-39.jpg" width="640" height="640" onerror="handleImageLoadError(this)"></div> 
+ <div class="dmNewParagraph u_1496663767" id="1496663767" style="line-height:initial;" data-element-type="paragraph" data-version="5"> <h1 class="m-text-align-center text-align-center">LETS TAKE OVER THE WH<span style="display: initial;">ITEHOUSE</span></h1> 
+</div> <a data-display-type="block" class="u_1466005169 dmButtonLink dmWidget dmWwr default dmOnlyButton" file="false" href="https://t.me/NewtonOnSoI" id="1466005169" data-anim-desktop="fadeInLeft" data-element-type="dButtonLinkId" target="_blank"> <span class="iconBg" id="1056479006"> <span class="icon hasFontIcon icon-star" id="1235688584"></span> 
+</span> 
+ <span class="text" id="1816025034">TELEGRAM</span> 
+</a> 
+ <a data-display-type="block" class="u_1557851313 dmButtonLink dmWidget dmWwr default dmOnlyButton" file="false" href="https://x.com/NewtonOnSol" id="1557851313" data-anim-desktop="fadeInLeft" data-element-type="dButtonLinkId" target="_blank"> <span class="iconBg" id="1529864682"> <span class="icon hasFontIcon icon-star" id="1049503656"></span> 
+</span> 
+ <span class="text" id="1389790017">TWITTER</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1993363500 dmRespRow hide-for-small dmSectionParallaxNew" style="text-align: center;" id="1993363500"> <div class="dmRespColsWrapper" id="1702727362"> <div class="dmRespCol small-12 medium-6 large-6" id="1030364764"> <div class="imageWidget align-center u_1295922874" data-element-type="image" data-widget-type="image" id="1295922874"><img src="images/photo_2024-07-25_15-37-39-558w.jpg" alt="" id="1494074776" class="" data-dm-image-path="https://irp.cdn-website.com/f28718a9/dms3rep/multi/photo_2024-07-25_15-37-39.jpg" width="640" height="640" onerror="handleImageLoadError(this)"></div> 
+</div> 
+ <div class="dmRespCol small-12 medium-6 large-6" id="1616823905"> <div class="u_1172181279 dmNewParagraph" id="1172181279" data-anim-desktop="fadeInLeft" data-element-type="paragraph" style="line-height: initial; opacity: 1; transform: translate3d(0%, 0%, 0px);" data-version="5"> <h1 class="text-align-left" style="line-height: 1.5;">LETS TAKE OVER THE WHITE<span style="display: initial;">HOUSE!</span></h1> 
+</div> <a data-display-type="block" class="u_1748652879 dmButtonLink dmWidget dmWwr default dmOnlyButton" file="false" href="https://t.me/NewtonOnSoI" id="1748652879" data-anim-desktop="fadeInLeft" data-element-type="dButtonLinkId" target="_blank"> <span class="iconBg" id="1449218367"> <span class="icon hasFontIcon icon-star" id="1361363646"></span> 
+</span> 
+ <span class="text" id="1873244005">TELEGRAM</span> 
+</a> 
+ <a data-display-type="block" class="u_1419360703 dmButtonLink dmWidget dmWwr default dmOnlyButton" file="false" href="https://x.com/NewtonOnSol" id="1419360703" data-anim-desktop="fadeInLeft" data-element-type="dButtonLinkId" target="_blank"> <span class="iconBg" id="1037957247"> <span class="icon hasFontIcon icon-star" id="1316672844"></span> 
+</span> 
+ <span class="text" id="1640846500">TWITTER</span> 
+</a> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1703887437" id="1703887437"> <div class="dmRespColsWrapper" id="1397528494"> <div class="dmRespCol large-12 medium-12 small-12" id="1028889755"> <div data-element-type="html" class="dmCustomHtml u_1822014482" id="1822014482"> <style>.main {
+            text-align: center;
+        }
+        .marq {
+            padding-top: 1px;
+            padding-bottom: 1px;
+        }
+        .geek1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: white;
+            padding-bottom: 10px;
+        }</style> 
+ <div class="main"> <marquee class="marq" bgcolor="#bc69da" direction="left" loop=""> <div class="geek1">NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE!</div> 
+</marquee> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1521944542 dmRespRow fullBleedChanged fullBleedMode" style="text-align: center;" id="1521944542"> <div class="dmRespColsWrapper" id="1422219637"> <div class="dmRespCol small-12 medium-12 large-12" id="1732918661"> <div class="dmNewParagraph u_1412188852" id="1412188852" data-anim-desktop="fadeInUp" data-element-type="paragraph" style="line-height: initial;" data-version="5"> <h2 class="m-size-24 text-align-center size-32"><span class="font-size-32 m-font-size-24" style="display: initial; color: rgb(81, 81, 81);">ABOUT NEWTON</span></h2> 
+</div> <div class="u_1075326146 imageWidget align-center" data-element-type="image" data-widget-type="image" id="1075326146"><img src="images/photo_2024-07-25_15-37-49-970w.jpg" alt="" id="1678470869" class="" data-dm-image-path="https://irp.cdn-website.com/f28718a9/dms3rep/multi/photo_2024-07-25_15-37-49.jpg" width="1280" height="426" onerror="handleImageLoadError(this)"></div> 
+ <div class="dmNewParagraph" data-element-type="paragraph" data-version="5" id="1987471267" style="transition: opacity 1s ease-in-out 0s;"><p class="m-size-29 text-align-center size-36"><span class="m-font-size-29 font-size-36" style="display: initial; font-weight: bold;">Who is the new dog in town that will take over White House?�&nbsp;<br></span></p><p class="m-size-29 text-align-center size-36"><span class="m-font-size-29 font-size-36" style="display: initial; font-weight: bold;">It's Newton, future U.S.A President dog! He and his mommy Kamala Harris will do what President Biden couldn't do!<br></span></p><p class="m-size-29 text-align-center size-36"><span class="m-font-size-29 font-size-36" style="display: initial; font-weight: bold;">WOOOF!</span></p></div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmRespRow u_1932353420" id="1932353420"> <div class="dmRespColsWrapper" id="1808644319"> <div class="dmRespCol large-12 medium-12 small-12" id="1968736152"> <div data-element-type="html" class="dmCustomHtml" id="1567713879"> <style>.main {
+            text-align: center;
+        }
+        .marq {
+            padding-top: 1px;
+            padding-bottom: 1px;
+        }
+        .geek1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: white;
+            padding-bottom: 10px;
+        }</style> 
+ <div class="main"> <marquee class="marq" bgcolor="#bc69da" direction="left" loop=""> <div class="geek1">NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE! NEWTON IS THE DOG OF THE WHITEHOUSE!</div> 
+</marquee> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1441636244 dmRespRow dmSectionParallaxNew" style="text-align: center;" id="1441636244"> <div class="dmRespColsWrapper" id="1419998059"> <div class="dmRespCol small-12 medium-12 large-12" id="1428441273"> <div class="dmNewParagraph u_1567156988" id="1567156988" style="display: block; line-height: initial; text-align: center; opacity: 1; transform: translate3d(0%, 0%, 0px);" data-anim-desktop="fadeInUp" data-element-type="paragraph" data-version="5"> <h1 class="text-align-center" style="line-height: 2;">SO MANY DO<span style="display: initial;">GS! BUT ONLY ONE CAN RULE THEM ALL!</span></h1> 
+</div></div> 
+</div> 
+</div> 
+ <div class="u_1869352139 dmRespRow dmSectionNoParallax" style="text-align: center;" id="1869352139"> <div class="dmRespColsWrapper" id="1557398553"> <div class="dmRespCol small-12 medium-12 large-12" id="1335318506"> <div class="u_1376778144 dmSpacer" id="1376778144" data-element-type="spacer"></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1437749104 dmRespRow desktop-no-padding" style="text-align: center;" id="1437749104"> <div class="dmRespColsWrapper" id="1921284427"> <div class="dmRespCol small-12 medium-6 large-6 u_1860893007" id="1860893007"> <div class="u_1168107077 dmNewParagraph" id="1168107077" data-anim-desktop="fadeInLeft" data-element-type="paragraph" style="line-height: initial;" data-version="5"> <h1 class="text-align-center m-text-align-center m-size-26 size-28"><span class="m-font-size-26 font-size-28" style="color: rgb(255, 255, 255); display: initial;">TOKENOMICS</span></h1> 
+</div> <div class="u_1650434886 dmNewParagraph" id="1650434886" data-anim-desktop="fadeInLeft" data-version="5" style="opacity: 1; transform: translate3d(0%, 0%, 0px);"><p class="m-text-align-center text-align-center" style="line-height: 2;"><span style="display: initial; color: rgb(81, 81, 81); font-weight: bold;">LP BURNED<span class="ql-cursor">﻿</span></span></p></div> <div class="u_1497252769 dmNewParagraph" id="1497252769" data-anim-desktop="fadeInLeft" data-version="5" style="opacity: 1; transform: translate3d(0%, 0%, 0px);"><p class="text-align-center m-text-align-center" style="line-height: 2;"><span style="font-weight: bold; color: rgb(81, 81, 81); display: initial;">ZERO TAXES</span></p></div> <div class="u_1753878323 dmNewParagraph" id="1753878323" data-anim-desktop="fadeInLeft" data-version="5" style="opacity: 1; transform: translate3d(0%, 0%, 0px);"><p class="text-align-center m-text-align-center" style="line-height: 2;"><span style="font-weight: bold; color: rgb(81, 81, 81); display: initial;">MINTING REVOKED</span></p></div></div> 
+ <div class="u_1480401842 dmRespCol small-12 medium-6 large-6 hasExtraLayerOverlay relativePos" id="1480401842" data-video-bg="eyJzcmMiOiJodHRwczovL3ZpZC5jZG4td2Vic2l0ZS5jb20vZjI4NzE4YTkvdmlkZW9zL3RPQ3hsRU83VEJlcHBOclI1YkFEX0lNR180Mjc0LXYubXA0IiwiaWQiOiJodHRwczovL3ZpZC5jZG4td2Vic2l0ZS5jb20vZjI4NzE4YTkvdmlkZW9zL3RPQ3hsRU83VEJlcHBOclI1YkFEX0lNR180Mjc0LXYubXA0IiwicHJvdmlkZXIiOiJjZG4iLCJlbWJlZCI6Imh0dHBzOi8vdmlkLmNkbi13ZWJzaXRlLmNvbS9mMjg3MThhOS92aWRlb3MvdE9DeGxFTzdUQmVwcE5yUjViQURfSU1HXzQyNzQtdi5tcDQiLCJyYXRpbyI6MC41NjI1LCJ0aHVtYm5haWwiOiJodHRwczovL2lycC5jZG4td2Vic2l0ZS5jb20vZjI4NzE4YTkvZG1zM3JlcC9tdWx0aS90T0N4bEVPN1RCZXBwTnJSNWJBRF9JTUdfNDI3NC52Mi4wMDAwMDAwLmpwZyIsInN1cHBvcnRCZ09uTW9iaWxlIjp0cnVlLCJzdXBwb3J0QmdMb29wIjp0cnVlLCJwb3N0ZXIiOiJodHRwczovL2lycC5jZG4td2Vic2l0ZS5jb20vZjI4NzE4YTkvZG1zM3JlcC9tdWx0aS90T0N4bEVPN1RCZXBwTnJSNWJBRF9JTUdfNDI3NC52Mi4wMDAwMDAwLmpwZyJ9" data-video-bg-mobile="true" data-video-init="true"> <div class="videobgwrapper video-ssr" data-ratio="0.5625"> <video autoplay="autoplay" playsinline="playsinline" muted="muted" loop="loop" class="videobgframe" poster="https://lirp.cdn-website.com/f28718a9/dms3rep/multi/opt/tOCxlEO7TBeppNrR5bAD_IMG_4274.v2.0000000-1920w.jpg" src="media/tOCxlEO7TBeppNrR5bAD_IMG_4274-v.mp4" style="object-position: 50% 50%" id="videobgframe-1480401842"></video> 
+</div> 
+ <div class="bgExtraLayerOverlay"></div> 
+ <div data-element-type="spacer" class="u_1235365092 dmSpacer" id="1235365092"></div> 
+</div> 
+</div> 
+</div> 
+ <div class="u_1302540535 dmRespRow dmSectionNoParallax" style="text-align: center;" id="1302540535"> <div class="dmRespColsWrapper" id="1631964485"> <div class="dmRespCol small-12 medium-12 large-12" id="1407968252"> <div class="u_1961598961 dmSpacer" id="1961598961" data-element-type="spacer"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div class="dmFooterContainer"> <div id="fcontainer" class="u_fcontainer f_hcontainer dmFooter p_hfcontainer"> <div dm:templateorder="250" class="dmFooterResp generalFooter" id="1851726766"> <div class="u_1777734855 dmRespRow fullBleedChanged" style="text-align: center;" id="1777734855"> <div class="dmRespColsWrapper" id="1307544788"> <div class="u_1296445781 dmRespCol small-12 medium-12 large-12" id="1296445781"> <div class="u_1100816720 imageWidget" data-widget-type="image" id="1100816720" data-element-type="image"><img src="images/photo_2024-07-25_15-37-39-166w.jpg" id="1190679569" dm_changed="true" class="u_1190679569" data-dm-image-path="https://irp.cdn-website.com/f28718a9/dms3rep/multi/photo_2024-07-25_15-37-39.jpg" width="640" height="640" onerror="handleImageLoadError(this)"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+ <div id="1236746004" dmle_extension="powered_by" data-element-type="powered_by" icon="true" surround="false"></div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+
+    </div>
+</div>
+<!--  Add full CSS and Javascript before the close tag of the body if needed -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Google Fonts Include -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- loadCSS function fonts.jsp-->
+
+
+
+<link rel="preload" href="https://irp.cdn-website.com/fonts/css2?family=Arvo:wght@400;700&amp;subset=latin-ext&amp;display=swap" as="style" fetchpriority="low" onload="loadCSS(this)">
+
+
+
+
+
+<!-- RT CSS Include d-css-runtime-desktop-one-package-structured-global-->
+<link rel="preload" as="style" fetchpriority="low" onload="loadCSS(this)" href="https://static.cdn-website.com/mnlt/production/4618/_dm/s/rt/dist/css/d-css-runtime-desktop-one-package-structured-global.min.css">
+
+<!-- End of RT CSS Include -->
+
+<link rel="preload" href="https://irp.cdn-website.com/WIDGET_CSS/ffeaf124de047e0731b420c2a9479654.css" id="widgetCSS" as="style" fetchpriority="low" onload="loadCSS(this)">
+
+<!-- Support `img` size attributes -->
+<style>img[width][height] {
+  height: auto;
+}</style>
+
+<!-- Support showing sticky element on page only -->
+<style>
+  body[data-page-alias="home"] #dm [data-show-on-page-only="home"] {
+    display: block !important;
+  }
+</style>
+
+<!-- This is populated in Ajax navigation -->
+<style id="pageAdditionalWidgetsCss" type="text/css">
+</style>
+
+
+
+
+<!-- Site CSS -->
+<link rel="preload" href="https://irp.cdn-website.com/f28718a9/files/f28718a9_withFlex_1.min.css?v=6" id="siteGlobalCss" as="style" fetchpriority="low" onload="loadCSS(this)">
+
+
+
+<style id="customWidgetStyle" type="text/css">
+
+</style>
+<style id="innerPagesStyle" type="text/css">
+    
+</style>
+
+
+<style id="additionalGlobalCss" type="text/css">
+</style>
+
+<!-- Page CSS -->
+<link rel="preload" href="https://irp.cdn-website.com/f28718a9/files/f28718a9_home_withFlex_1.min.css?v=6" id="homeCssLink" as="style" fetchpriority="low" onload="loadCSS(this)">
+
+<style id="pagestyle" type="text/css">
+    
+</style>
+
+<style id="pagestyleDevice" type="text/css">
+    
+</style>
+
+<!-- Flex Sections CSS -->
+
+
+
+
+
+<style id="globalFontSizeStyle" type="text/css">
+    .font-size-32, .size-32, .size-32 > font { font-size: 32px !important; }.font-size-36, .size-36, .size-36 > font { font-size: 36px !important; }.font-size-28, .size-28, .size-28 > font { font-size: 28px !important; }
+</style>
+<style id="pageFontSizeStyle" type="text/css">
+</style>
+
+<!-- ========= JS Section ========= -->
+
+<script>
+    var isWLR = true;
+
+    window.customWidgetsFunctions = {};
+    window.customWidgetsStrings = {};
+    window.collections = {};
+    window.currentLanguage = "ENGLISH"
+    window.isSitePreview = false;
+</script>
+<script type="text/javascript">
+
+    var d_version = "production_4618";
+    var build = "2024-07-25T06_48_30";
+    window['v' + 'ersion'] = d_version;
+
+    function buildEditorParent() {
+        window.isMultiScreen = true;
+        window.editorParent = {};
+        window.previewParent = {};
+        window.assetsCacheQueryParam = "?version=2024-07-25T06_48_30";
+        try {
+            var _p = window.parent;
+            if (_p && _p.document && _p.$ && _p.$.dmfw) {
+                window.editorParent = _p;
+            } else if (_p.isSitePreview) {
+                window.previewParent = _p;
+            }
+        } catch (e) {
+
+        }
+    }
+
+    buildEditorParent();
+</script>
+
+<!-- Load jQuery -->
+<script type="text/javascript" id="d-js-jquery" src="js/jquery-3.7.0.min.js"></script>
+<!-- End Load jQuery -->
+<!-- Injecting site-wide before scripts -->
+<!-- End Injecting site-wide to the head -->
+
+
+<script>
+    var _jquery = window.$;
+
+    var jqueryAliases = ['$', 'jquery', 'jQuery'];
+
+    jqueryAliases.forEach((alias) => {
+        Object.defineProperty(window, alias, {
+            get() {
+                return _jquery;
+            },
+            set() {
+                console.warn("Trying to over-write the global jquery object!");
+            }
+        });
+    });
+    window.jQuery.migrateMute = true;
+</script>
+<script>
+    window.cookiesNotificationMarkupPreview = 'null';
+</script>
+
+<!-- HEAD RT JS Include -->
+<script id="d-js-params">
+    window.INSITE = window.INSITE || {};
+    window.INSITE.device = "desktop";
+
+    window.rtCommonProps = {};
+    rtCommonProps["rt.ajax.ajaxScriptsFix"] =true;
+    rtCommonProps["rt.pushnotifs.sslframe.encoded"] = 'aHR0cHM6Ly97c3ViZG9tYWlufS5wdXNoLW5vdGlmcy5jb20=';
+    rtCommonProps["runtimecollector.url"] = 'https://rtc.multiscreensite.com';
+    rtCommonProps["performance.tabletPreview.removeScroll"] = 'false';
+    rtCommonProps["inlineEditGrid.snap"] =true;
+    rtCommonProps["popup.insite.cookie.ttl"] = '0.5';
+    rtCommonProps["rt.pushnotifs.force.button"] =true;
+    rtCommonProps["common.mapbox.token"] = 'pk.eyJ1IjoiZGFubnliMTIzIiwiYSI6ImNqMGljZ256dzAwMDAycXBkdWxwbDgzeXYifQ.Ck5P-0NKPVKAZ6SH98gxxw';
+    rtCommonProps["common.mapbox.js.override"] =false;
+    rtCommonProps["common.here.appId"] = 'iYvDjIQ2quyEu0rg0hLo';
+    rtCommonProps["common.here.appCode"] = '1hcIxLJcbybmtBYTD9Z1UA';
+    rtCommonProps["isCoverage.test"] =false;
+    rtCommonProps["ecommerce.ecwid.script"] = 'https://app.multiscreenstore.com/script.js';
+    rtCommonProps["feature.flag.mappy.kml"] =false;
+    rtCommonProps["common.resources.dist.cdn"] =true;
+    rtCommonProps["common.build.dist.folder"] = 'production/4618';
+    rtCommonProps["common.resources.cdn.host"] = 'https://static.cdn-website.com';
+    rtCommonProps["common.resources.folder"] = 'https://static.cdn-website.com/mnlt/production/4618';
+    rtCommonProps["feature.flag.runtime.backgroundSlider.preload.slowly"] =true;
+    rtCommonProps["feature.flag.runtime.photoswipe.fix"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.respectCssAnimationProps.enabled"] =true;
+    rtCommonProps["feature.flag.runtime.newAnimation.jitAnimation.enabled"] =true;
+    rtCommonProps["feature.flag.sites.google.analytics.gtag"] =true;
+    rtCommonProps["feature.flag.runOnReadyNewTask"] =true;
+    rtCommonProps["isAutomation.test"] =false;
+
+    
+    rtCommonProps['common.mapsProvider'] = 'mapbox';
+    
+    rtCommonProps['common.mapsProvider.version'] = '0.52.0';
+    rtCommonProps['common.geocodeProvider'] = 'here';
+    rtCommonProps['common.map.defaults.radiusSize'] = '1500';
+    rtCommonProps['common.map.defaults.radiusBg'] = 'rgba(255, 255, 255, 0.4)';
+    rtCommonProps['common.map.defaults.strokeColor'] = 'rgba(255, 255, 255, 1)';
+    rtCommonProps['common.map.defaults.strokeSize'] = '2';
+    rtCommonProps['server.for.resources'] = '';
+    rtCommonProps['feature.flag.lazy.widgets'] = true;
+    rtCommonProps['feature.flag.single.wow'] = false;
+    rtCommonProps['feature.flag.disallowPopupsInEditor'] = true;
+    rtCommonProps['feature.flag.mark.anchors'] = true;
+    rtCommonProps['captcha.public.key'] = '6LffcBsUAAAAAMU-MYacU-6QHY4iDtUEYv_Ppwlz';
+    rtCommonProps['captcha.invisible.public.key'] = '6LeiWB8UAAAAAHYnVJM7_-7ap6bXCUNGiv7bBPME';
+    rtCommonProps["images.sizes.small"] =160;
+    rtCommonProps["images.sizes.mobile"] =640;
+    rtCommonProps["images.sizes.tablet"] =1280;
+    rtCommonProps["images.sizes.desktop"] =1920;
+    rtCommonProps["modules.resources.cdn"] =true;
+    rtCommonProps["import.images.storage.imageCDN"] = 'https://lirp.cdn-website.com/';
+    rtCommonProps["facebook.api.version"] = '7.0';
+    rtCommonProps["feature.flag.runtime.inp.threshold"] =150;
+    rtCommonProps["feature.flag.performance.logs"] =true;
+    rtCommonProps["site.widget.form.captcha.type"] = 'g_recaptcha';
+    rtCommonProps["friendly.captcha.site.key"] = 'FCMGSQG9GVNMFS8K';
+    rtCommonProps["cookiebot.mapbox.consent.category"] = 'marketing';
+    rtCommonProps["platform.monolith.personalization.dateTimeCondition.popupMsgAction.moveToclient.enabled"] =false;
+
+    // feature flags that's used out of runtime module (in  legacy files)
+    rtCommonProps["site.runtime.video.background.ssr"] =true;
+
+    window.rtFlags = {};
+    rtFlags["unsuspendEcwidStoreOnRuntime.enabled"] =true;
+    rtFlags["scripts.widgetCount.enabled"] =true;
+    rtFlags["ecom.ecwid.categoryPage.modifyLinks"] = true;
+    rtFlags["ecom.ecwidNewUrlStructure.enabled"] = false;
+    rtFlags["ecom.ecwid.old.store.fix.scrolling.enabled"] = true;
+    rtFlags["ecom.ecwid.old.store.fix.facebook.share"] = true;
+    rtFlags["ecom.ecwid.fallBackInCaseLinksNotFound.enabled"] = true;
+    rtFlags["feature.flag.photo.gallery.exact.size"] =false;
+    rtFlags["new.store.fix.ecwid.back.bug"] =true;
+    rtFlags["facebook.runtime.widgets.upgrade"] =true;
+    rtFlags["ecom.ecwid.solve.url.modifications"] = true;
+    rtFlags["ecom.ecwid.configOptions"] = true;
+    rtFlags["geocode.search.localize"] =false;
+    rtFlags["feature.flag.runtime.newAnimation.asyncInit.setTimeout.enabled"] =false;
+    rtFlags["site.contact.form.fix.for.attribute"] =true;
+    rtFlags["contact.form.date.format.enabled"] = true;
+    rtFlags["twitter.heightLimit.enabled"] = true;
+    rtFlags["ecom.ecwid.fixTranslations.enabled"] = true;
+    rtFlags["runtime.load.script.native"] =true;
+    rtFlags["editor.classicHybrid.photogallery.fix"] =true;
+    rtFlags["runtime.lottieOverflow"] =false;
+    rtFlags["runtime.monitoring.sentry.ignoreErrors"] = "";
+    rtFlags["ecom.ecwid.old.store.fix.scrolling.detect.enable"] =true;
+    rtFlags["contact.form.browserValidation.enabled"] =true;
+</script>
+<script src="js/d-js-one-runtime-unified-desktop.min.js" id="d-js-core"></script>
+<!-- End of HEAD RT JS Include -->
+<script src="js/d-js-jquery-migrate.min.js"></script>
+<script>
+    
+    $(window).bind("orientationchange", function (e) {
+        $.layoutManager.initLayout();
+        
+    });
+    $(document).resize(function () {
+        
+    });
+</script>
+<script type="text/javascript" id="d_track_campaign">
+(function() {
+ 	var campaign = (/utm_campaign=([^&]*)/).exec(window.location.search);
+
+ 	if (campaign && campaign != null && campaign.length > 1) {
+ 		campaign = campaign[1];
+ 		document.cookie = "_dm_rt_campaign=" + campaign + ";expires=" + new Date().getTime() + 24*60*60*1000 + ";domain=" + window.location.hostname + ";path=/";
+ 	}
+}());
+</script>
+<script type="text/javascript">
+  var _dm_gaq = {};
+  var _gaq = _gaq || [];
+  var _dm_insite = [];
+</script>
+
+<script type="text/javascript" id="d_track_sp">
+;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
+p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)
+};p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;
+n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","//d32hwlnfiv2gyn.cloudfront.net/sp-2.0.0-dm-0.1.min.js","snowplow"));
+window.dmsnowplow  = window.snowplow;
+
+dmsnowplow('newTracker', 'cf', 'd32hwlnfiv2gyn.cloudfront.net', { // Initialise a tracker
+  appId: 'f28718a9'
+});
+
+// snowplow queries element styles so we wait until CSS calculations are done.
+requestAnimationFrame(() => {
+	dmsnowplow('trackPageView');
+	_dm_insite.forEach((rule) => {
+		// Specifically in popup only the client knows if it is shown or not so we don't always want to track its impression here
+		// the tracking is in popup.js
+		if (rule.actionName !== "popup") {
+			dmsnowplow('trackStructEvent', 'insite', 'impression', rule.ruleType, rule.ruleId);
+		}
+		window?.waitForDeferred?.('dmAjax', () => {
+			$.DM.events.trigger('event-ruleTriggered', {value: rule});
+		});
+	});
+});
+</script>
+   <div style="display:none;" id="P6iryBW0Wu"></div>
+
+<!-- photoswipe markup -->
+
+
+
+
+
+
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div id="fb-root" data-locale="en"></div>
+<!-- Alias: f28718a9 -->
+<div class="dmPopupMask" id="dmPopupMask"></div>
+<div id="dmPopup" class="dmPopup">
+	<div class="dmPopupCloseWrapper"> <div class="dmPopupClose dm-common-icons-close oneIcon" onclick="dmHidePopup(event);"></div> </div>
+ 	<div class="dmPopupTitle"> <span></span> Share by:</div> 
+	<div class="data"></div>
+</div><script id="d_track_personalization">
+	window?.waitForDeferred?.('dmAjax', () => {
+		// Collects client data and updates cookies used by smart sites
+		window.expireDays = 365;
+		window.visitLength = 30 * 60000;
+		$.setCookie("dm_timezone_offset", (new Date()).getTimezoneOffset(), window.expireDays);
+			setSmartSiteCookiesInternal("dm_this_page_view","dm_last_page_view","dm_total_visits","dm_last_visit");
+	});
+</script>
+<script type="text/javascript">
+    
+    Parameters.NavigationAreaParams.MoreButtonText = 'MORE';
+    
+    Parameters.NavigationAreaParams.LessButtonText = 'LESS';
+    Parameters.HomeLinkText = 'Home';
+    </script>
+<!--  End Script tags -->
+
+<!--  Site Wide Html Markup -->
+<!--  Site Wide Html Markup -->
+
+
+</body></html>
